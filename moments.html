@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Moments</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f8c2b0, #ffb3b3);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            min-height: 100vh;
+            padding-top: 50px; /* Space for navbar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ff6f61;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 15px;
+        }
+
+        .navbar a:hover {
+            color: #d62c4e;
+        }
+
+        /* Hamburger styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #ff6f61;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        /* Navbar links */
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Mobile Navbar Toggle */
+        .navbar-links.active {
+            display: block;
+            position: absolute;
+            top: 60px; /* Adjust for navbar height */
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-links a {
+                padding: 12px;
+                font-size: 18px;
+                display: block;
+                border-bottom: 1px solid #f8c2b0;
+            }
+        }
+
+        /* Moment Container */
+        .moment-container {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .moment-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #ff6f61;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .moment-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Scrollable Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);  /* Creates two columns */
+            gap: 20px;  /* Space between images */
+            max-width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            margin: 0 auto;
+            max-width: 90%;
+            max-height: 80%;
+        }
+
+        #caption {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html">Intro</a>
+            <a href="moments.html">Moments</a>
+            <a href="goodbye.html">Farewell</a>
+        </div>
+    </div>
+
+    <!-- Moment Container -->
+    <div class="moment-container">
+        <img src="selfietogether.jpg" alt="Special Moment" />
+        <div class="moment-message">
+            I'm so glad to be with you in this time kay saimo lang ko nag tipon courage nga magpakita kay I thought its worth the risk naman.<br><br>
+            Na enjoy ko gid kay first time ko to ma experience I'm so happy gid and I cherish it. Still remember tanan nga natabo that time.
+       </div>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="image-gallery">
+        <img src="image1.jpg" alt="Moment 1" class="gallery-image">
+        <img src="image2.jpg" alt="Moment 2" class="gallery-image">
+        <img src="image3.jpg" alt="Moment 3" class="gallery-image">
+        <img src="image4.jpg" alt="Moment 4" class="gallery-image">
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Toggle the navbar visibility on mobile
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        hamburger.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const caption = document.getElementById('caption');
+        const closeModal = document.getElementById('closeModal');
+
+        // Get all images in the gallery
+        const galleryImages = document.querySelectorAll('.gallery-image');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalImage.src = image.src;
+                caption.textContent = image.alt;
+            });
+        });
+
+        // Close modal when user clicks on close button
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when user clicks outside of the image
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Message</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f8c2b0, #ffb3b3);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            min-height: 100vh;
+            padding-top: 50px; /* Space for navbar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            text-align: center;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: #ff6f61;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 10px 15px;
+        }
+
+        .navbar a:hover {
+            color: #d62c4e;
+        }
+
+        /* Hamburger styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #ff6f61;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        /* Navbar links */
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Mobile Navbar Toggle */
+        .navbar-links.active {
+            display: block;
+            position: absolute;
+            top: 60px; /* Adjust for navbar height */
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar-links a {
+                padding: 12px;
+                font-size: 18px;
+                display: block;
+                border-bottom: 1px solid #f8c2b0;
+            }
+        }
+
+        /* Farewell Message Container */
+        .farewell-container {
+            text-align: center;
+            padding: 30px;
+            margin: 20px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .farewell-container .message {
+            font-size: 20px;
+            font-family: 'Georgia', serif;
+            color: #4A4A4A;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            max-width: 90%;
+            margin: 0 auto;
+            text-align: justify;
+            background-color: #f8f8f8;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+            opacity: 0;
+            animation: fadeInMessage 1s ease-out forwards;
+        }
+
+        /* Animation for the message */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInMessage {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .farewell-container .message p {
+            margin-bottom: 10px;
+        }
+
+        .farewell-container .message p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Decorative styling */
+        .farewell-container .message:before {
+            content: '✧';
+            font-size: 25px;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff6f61;
+        }
+
+        .farewell-container .message:after {
+            content: '✧';
+            font-size: 25px;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff6f61;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <button class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="moments.html">Moments</a>
+            <a href="goodbye.html">Farewell</a>
+        </div>
+    </div>
+
+    <!-- Farewell Message -->
+    <div class="farewell-container">
+        <div class="message">
+          <p>Gusto ta naka iwasan kay everytime makita taka it opens my old wounds. I guess di gid madula ang feelings ko but I hope it will someday like makita taka daw wala nalang.</p>
+          <br>
+          <p>I hope you will read this one I made this for you. I poured every last feelings ko sa diri this is the closure na. I made this since ging tap mo akon shoulder sang monday.</p>
+          <br>
+            <p>The time has come, it's clear to see,</p>
+            <p>We’ve reached the end, you and me.</p>
+            <p>Our paths diverge, no need to fight,</p>
+            <p>It's time for peace, for quiet nights.</p>
+            <p>The love I had has run its course,</p>
+            <p>No longer guided by the same force.</p>
+            <p>I need my space, I need my air,</p>
+            <p>To find the peace that once was there.</p>
+            <p>Don't try to reach, don't try to call,</p>
+            <p>It’s better this way, after it all.</p>
+            <p>With silence now, I’ll heal my soul,</p>
+            <p>And slowly start to make me whole.</p>
+            <p>So this is goodbye, no need to stay,</p>
+            <p>Let’s part in peace, and go our way.</p>
+            <p>May life be kind, may time be true,</p>
+            <p>And may we both find peace anew.</p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the navbar visibility on mobile
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        hamburger.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
